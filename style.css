@@ -383,18 +383,47 @@ ul { list-style: none; }
 /* --- Planos / Pricing --- */
 .pricing { padding: 80px 0; background-color: #f9f9f9; }
 
+/* --- Estilos do Carrossel de Planos --- */
+
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .pricing-grid {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    gap: 20px;
+    overflow-x: auto;       /* Permite rolagem lateral */
+    scroll-behavior: smooth;
+    padding: 40px 10px;     /* Espaço extra em cima/baixo para a sombra não cortar */
+    
+    /* Configuração chave para não quebrar linha */
+    flex-wrap: nowrap;      
+    justify-content: flex-start;
+    
+    /* Esconde a barra de rolagem para ficar mais bonito */
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
+    width: 100%;
+}
+
+.pricing-grid::-webkit-scrollbar { 
+    display: none; /* Chrome/Safari */
 }
 
 .price-card {
     background: white;
     border-radius: 12px;
     padding: 30px;
-    width: 320px;
+    
+    /* Tamanho Fixo para o Carrossel */
+    min-width: 300px; 
+    max-width: 300px;
+    flex-shrink: 0;   /* Garante que o card não esmague */
+    
     border: 1px solid #e0e0e0;
     text-align: center;
     position: relative;
@@ -403,6 +432,44 @@ ul { list-style: none; }
     flex-direction: column;
 }
 
+/* Botões do Carrossel */
+.slider-btn {
+    background-color: var(--accent-red);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 10;
+    
+    /* Posicionamento absoluto nas laterais */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slider-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn.prev { left: -20px; } /* Fica um pouco para fora a esquerda */
+.slider-btn.next { right: -20px; } /* Fica um pouco para fora a direita */
+
+/* Ajuste Responsivo para os botões não sumirem na tela pequena */
+@media (max-width: 768px) {
+    .slider-btn {
+        display: none; /* No celular é melhor usar o dedo para arrastar, botões ocupam espaço */
+    }
+    .pricing-grid {
+        padding-left: 20px; /* Margem para ver que tem mais itens */
+        padding-right: 20px;
+    }
+}
 .price-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
