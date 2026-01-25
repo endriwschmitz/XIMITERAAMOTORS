@@ -735,5 +735,31 @@ footer {
     15% { transform: scale(1.2); }
     30% { transform: scale(1); }
     45% { transform: scale(1.2); }
-    60% { transform: scale(1); }
+    60% { transform: scale(1); }/* --- Link do Instagram na Hero Section --- */
+.hero-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px; /* Espaço para desgrudar dos ícones de cima */
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo muito sutil */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hero-social-link i {
+    font-size: 1.4rem;
+    color: var(--accent-red); /* Ícone Vermelho Ximiteraa */
+}
+
+.hero-social-link:hover {
+    background-color: rgba(211, 47, 47, 0.1); /* Fica levemente vermelho no fundo */
+    border-color: var(--accent-red);
+    color: var(--white);
+    transform: translateY(-3px);
+}
 }
