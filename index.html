@@ -211,80 +211,109 @@
         </div>
     </section>
 
-    <section id="planos" class="pricing">
+<section id="planos" class="pricing">
         <div class="container">
             <div class="section-title">
                 <h2>Nossos Planos</h2>
                 <p>Pagamento semanal flexível que cabe no seu bolso.</p>
             </div>
             
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <div class="card-header">
-                        <h3>Econômica</h3>
-                        <span class="cc">110cc</span>
+            <div class="slider-wrapper">
+                <button class="slider-btn prev" onclick="scrollPlans(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="pricing-grid" id="pricingGrid">
+                    <div class="price-card">
+                        <div class="card-header">
+                            <h3>Econômica</h3>
+                            <span class="cc">110cc</span>
+                        </div>
+                        <div class="price">
+                            <span class="currency">R$</span>
+                            <span class="amount">40</span>
+                            <span class="period">/dia</span>
+                        </div>
+                        <p class="billing-text">Cobrado R$ 280,00 por semana</p>
+                        <p class="billing-text">Contrato mínimo 3 meses</p>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> 1.000km/semana</li>
+                            <li><i class="fas fa-check"></i> Moto 2025</li>
+                            <li><i class="fas fa-check"></i> Seguro Veicular</li>
+                            <li><i class="fas fa-check"></i> Revisão em concessionária</li>
+                        </ul>
+                        <a href="https://wa.me/49998348797?text=Quero+o+plano+Economica" class="btn-outline">Escolher este</a>
                     </div>
-                    <div class="price">
-                        <span class="currency">R$</span>
-                        <span class="amount">40</span>
-                        <span class="period">/dia</span>
+
+                    <div class="price-card popular">
+                        <div class="tag-popular">Mais Escolhido</div>
+                        <div class="card-header">
+                            <h3>Premium</h3>
+                            <span class="cc">110cc</span>
+                        </div>
+                        <div class="price">
+                            <span class="currency">R$</span>
+                            <span class="amount">50</span>
+                            <span class="period">/dia</span>
+                        </div>
+                        <p class="billing-text">Cobrado R$ 349,00 por semana</p>
+                        <p class="billing-text">Contrato de 5 meses</p>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> <strong>KM Livres</strong></li>
+                            <li><i class="fas fa-check"></i> Moto 2025</li>
+                            <li><i class="fas fa-check"></i> Seguro Veicular</li>
+                            <li><i class="fas fa-check"></i> Revisão em concessionária</li>
+                        </ul>
+                        <a href="https://wa.me/49998348797?text=Quero+o+plano+Premium" class="btn-cta full-width">Escolher este</a>
                     </div>
-                    <p class="billing-text">Cobrado R$ 280,00 por semana</p>
-                    <p class="billing-text">Contrato mínimo 3 meses</p>
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check"></i> 1.000km/semana</li>
-                        <li><i class="fas fa-check"></i> Moto 2025</li>
-                        <li><i class="fas fa-check"></i> Seguro Veicular</li>
-                        <li><i class="fas fa-check"></i> Revisão em concessionária</li>
-                        <li><i class="fas fa-check"></i> Moto rastreada</li>
-                    </ul>
-                    <a href="https://wa.me/49998348797?text=Quero+o+plano+Economica" class="btn-outline">Escolher este</a>
+
+                    <div class="price-card">
+                        <div class="card-header">
+                            <h3>Potência</h3>
+                            <span class="cc">160cc</span>
+                        </div>
+                        <div class="price">
+                            <span class="currency">R$</span>
+                            <span class="amount">50</span>
+                            <span class="period">/dia</span>
+                        </div>
+                        <p class="billing-text">Cobrado R$ 349,00 por semana</p>
+                        <p class="billing-text">Contrato mínimo 3 meses</p>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> 1.000km/semana</li>
+                            <li><i class="fas fa-check"></i> Moto 2023</li>
+                            <li><i class="fas fa-check"></i> Seguro Veicular</li>
+                            <li><i class="fas fa-check"></i> Moto rastreada</li>
+                        </ul>
+                        <a href="https://wa.me/49998348797?text=Quero+o+plano+Potencia" class="btn-outline">Escolher este</a>
+                    </div>
+
+                    <div class="price-card">
+                        <div class="card-header">
+                            <h3>Rota Final</h3>
+                            <span class="cc">Compra</span>
+                        </div>
+                        <div class="price">
+                            <span class="currency">R$</span>
+                            <span class="amount">60</span>
+                            <span class="period">/dia</span>
+                        </div>
+                        <p class="billing-text">Cobrado R$ 420,00 por semana</p>
+                        <p class="billing-text">Contrato de 24 meses</p>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> <strong>A moto é sua no final</strong></li>
+                            <li><i class="fas fa-check"></i> Moto Zero KM</li>
+                            <li><i class="fas fa-check"></i> Seguro Veicular</li>
+                            <li><i class="fas fa-check"></i> Manutenção compartilhada</li>
+                        </ul>
+                        <a href="https://wa.me/49998348797?text=Quero+o+plano+Rota+Final" class="btn-outline">Escolher este</a>
+                    </div>
+
                 </div>
 
-                <div class="price-card popular">
-                    <div class="tag-popular">Mais Escolhido</div>
-                    <div class="card-header">
-                        <h3>Premium</h3>
-                        <span class="cc">110cc</span>
-                    </div>
-                    <div class="price">
-                        <span class="currency">R$</span>
-                        <span class="amount">50</span>
-                        <span class="period">/dia</span>
-                    </div>
-                    <p class="billing-text">Cobrado R$ 349,00 por semana</p>
-                    <p class="billing-text">Contrato de 5 meses</p>
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check"></i> <strong>KM Livres</strong></li>
-                        <li><i class="fas fa-check"></i> Moto 2025</li>
-                        <li><i class="fas fa-check"></i> Seguro Veicular</li>
-                        <li><i class="fas fa-check"></i> Revisão em concessionária</li>
-                        <li><i class="fas fa-check"></i> Moto rastreada</li>
-                    </ul>
-                    <a href="https://wa.me/49998348797?text=Quero+o+plano+Premium" class="btn-cta full-width">Escolher este</a>
-                </div>
-
-                <div class="price-card">
-                    <div class="card-header">
-                        <h3>Potência</h3>
-                        <span class="cc">160cc</span>
-                    </div>
-                    <div class="price">
-                        <span class="currency">R$</span>
-                        <span class="amount">50</span>
-                        <span class="period">/dia</span>
-                    </div>
-                    <p class="billing-text">Cobrado R$ 349,00 por semana</p>
-                    <p class="billing-text">Contrato mínimo 3 meses</p>
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check"></i> 1.000km/semana</li>
-                        <li><i class="fas fa-check"></i> Moto 2023</li>
-                        <li><i class="fas fa-check"></i> Seguro Veicular</li>
-                        <li><i class="fas fa-check"></i> Moto rastreada</li>
-                    </ul>
-                    <a href="https://wa.me/49998348797?text=Quero+o+plano+Potencia" class="btn-outline">Escolher este</a>
-                </div>
-
+                <button class="slider-btn next" onclick="scrollPlans(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
             
             <div class="caucao-alert">
@@ -292,6 +321,17 @@
                 <p>É necessário caução de R$ 700,00 (Parcelamos no cartão).</p>
             </div>
         </div>
+
+        <script>
+            function scrollPlans(direction) {
+                const container = document.getElementById('pricingGrid');
+                const scrollAmount = 340; // Largura do card + espaço
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        </script>
     </section>
 
     <section id="faq" class="faq">
