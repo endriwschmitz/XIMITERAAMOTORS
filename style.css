@@ -13,6 +13,14 @@
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
 }
 
+/* --- CONFIGURAÇÃO CRÍTICA PARA CORRIGIR FAIXA BRANCA NO MOBILE --- */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Corta qualquer coisa que ultrapasse a largura da tela */
+    position: relative;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -475,29 +483,28 @@ ul { list-style: none; }
 
 .accordion p { margin-top: 15px; color: #555; }
 
-/* --- Footer (Corrigido e Centralizado) --- */
+/* --- Footer Centralizado --- */
 footer {
     background-color: var(--secondary-bg);
     color: #999;
     padding: 60px 0 20px;
-    text-align: center; /* Garante que textos fiquem no centro */
+    text-align: center;
 }
 
-/* ALTERAÇÃO AQUI: Layout Flex Centralizado */
 .footer-content {
     display: flex;
-    flex-direction: column; /* No celular fica um embaixo do outro */
-    align-items: center;    /* Centraliza os blocos horizontalmente */
-    text-align: center;     /* Centraliza o texto dentro dos blocos */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 40px;
     margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
     .footer-content {
-        flex-direction: row;     /* No PC fica lado a lado */
-        justify-content: center; /* Centralizados na tela */
-        gap: 100px;              /* Espaço entre as colunas */
+        flex-direction: row;
+        justify-content: center;
+        gap: 100px;
         align-items: flex-start;
     }
 }
@@ -508,34 +515,23 @@ footer {
 }
 
 .footer-col h3 { color: var(--accent-red); }
-
 .footer-col p { margin-bottom: 10px; }
 
-/* CORREÇÃO DO LINK ROXO DO RODAPÉ */
 .footer-col a {
-    color: #999;           /* Cor padrão cinza/branca */
+    color: #999;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.footer-col a:visited {
-    color: #999;           /* Evita ficar roxo */
-}
-
-.footer-col a:hover {
-    color: var(--accent-red); /* Fica vermelho ao passar o mouse */
-}
-
-.footer-col a i {
-    margin-right: 5px;
-}
+.footer-col a:visited { color: #999; }
+.footer-col a:hover { color: var(--accent-red); }
 
 /* Logo do Rodapé */
 .footer-logo {
     width: 180px;
     max-width: 100%;
     margin-bottom: 15px;
-    display: inline-block; /* Ajuda a centralizar */
+    display: inline-block;
 }
 
 .copyright {
@@ -545,7 +541,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Créditos */
 .developer {
     margin-top: 10px;
     font-size: 0.85rem;
@@ -632,44 +627,15 @@ footer {
     transition: all 0.3s ease;
 }
 
-/* Responsividade Mobile */
+/* --- Responsividade Mobile (Correção de Largura) --- */
 @media (max-width: 992px) {
     .hero-content-dark {
         flex-direction: column-reverse;
         text-align: center;
         padding-top: 30px;
     }
-
-    .hero-text-dark h1 { font-size: 2rem; }
     .hero-logo { max-height: 300px; }
-    
     .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-    
-    .timeline-container {
-        flex-direction: column;
-        padding-left: 20px;
-        gap: 40px;
-    }
-    
-    .timeline-container::before {
-        width: 2px;
-        height: 100%;
-        top: 0;
-        left: 60px;
-        border-top: none;
-        border-left: 3px dotted #555;
-    }
-    
-    .step-item {
-        display: flex;
-        align-items: center;
-        text-align: left;
-        gap: 20px;
-    }
-    
-    .step-header { margin-bottom: 0; }
-    .price-card.popular { transform: scale(1); }
-    
     .slider-btn { display: none; }
     .pricing-grid { padding-left: 20px; padding-right: 20px; }
 }
@@ -677,6 +643,21 @@ footer {
 @media (max-width: 600px) {
     .nav-menu { display: none; }
     .benefits-grid { grid-template-columns: 1fr; }
-    .hero-text-dark h1 { font-size: 1.8rem; }
+    
+    /* AQUI ESTÁ A CORREÇÃO DE FONTE PARA O TÍTULO CABER NA TELA */
+    .hero-text-dark h1 { 
+        font-size: 1.6rem; 
+        padding: 0 10px;
+    }
+    
     .price-card { width: 100%; }
+    
+    /* Ajuste para garantir que o WhatsApp apareça */
+    .whatsapp-float {
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
 }
